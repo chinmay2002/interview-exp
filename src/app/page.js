@@ -1,10 +1,12 @@
+import Navbar from '@/components/Navbar'
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-    <div>
-
-      <div>hello world</div>
-
-    </div>
+  <>
+  Hello World
+  </>
   )
 }
+
+export default page
