@@ -1,7 +1,8 @@
 "use client"
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAnalytics } from 'firebase/analytics';
 import 'firebase/auth';
+import { getFirestore } from '@firebase/firestore'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,5 +19,11 @@ export const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+
+
+// try to add analytics
+const analytics =
+  app.name && typeof window !== 'undefined' ? getAnalytics(app) : null;
+
+export { analytics, app }
