@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createCustomTheme } from "../utilities/theme";
-import Login from "@/components/Login";
+import Login from "@/app/signUp/page";
 
 const page = () => {
   const [theme, setTheme] = useState({});
@@ -21,7 +21,6 @@ const page = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Navbar />
-          <Login />
         </ThemeProvider>
       </Container>
     </>
